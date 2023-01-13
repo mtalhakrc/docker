@@ -10,13 +10,10 @@ WORKDIR /usr/src/app
 
 COPY . .
 
-#RUN go mod download && go mod verify
-
+RUN go mod download && go mod verify
 
 RUN go build -v -o /usr/src/app/main .
 
 
-CMD /usr/src/app/main
-
-#CMD echo 'bismillah'
+CMD ./main
 
